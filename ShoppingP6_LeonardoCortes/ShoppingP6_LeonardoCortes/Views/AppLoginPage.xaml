@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingP6_LeonardoCortes.Views.AppLoginPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="AppBackgroundP6">
+    <ContentPage.Content>
+        <StackLayout Padding="50,0,50,0" VerticalOptions="Center">
+            <Entry x:Name="TxtUserName" Placeholder="User Email" FontSize="25" Keyboard="Email" TextColor="White" PlaceholderColor="White"/>
+
+            <StackLayout Padding="0,20,0,40" Orientation="Horizontal" Spacing="15" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True" FontSize="25" Keyboard="Default" TextColor="White" PlaceholderColor="White" WidthRequest="260"/>
+
+                <StackLayout>
+                    <Switch x:Name="SwWatchPassword" IsToggled="False" Toggled="CmdWatchPassword"/>
+                    <Label Text="Watch Password" FontSize="Micro" TextColor="White" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                    
+            </StackLayout>
+          
+            <Button x:Name="BtnLogin" Text="Login" FontSize="25" CornerRadius="15" BackgroundColor="#26960B"/>
+
+            <Button x:Name="BtnUserSignUp" Text="Sign Up" FontSize="25" CornerRadius="15" Clicked="BtnUserSignUp_Clicked"/>
+
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
