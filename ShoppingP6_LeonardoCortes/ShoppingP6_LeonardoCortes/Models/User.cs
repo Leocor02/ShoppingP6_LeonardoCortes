@@ -79,6 +79,40 @@ namespace ShoppingP6_LeonardoCortes.Models
             }
         }
 
+        public async Task<bool> ValidateLogin()
+        {
+            try
+            {
+                string RouteSufix = string.Format("Users/ValidateLogin?UserName={0}&UserPassword={1}", this.Email, this.UserPassword);
+                string FinalURL = Services.CnnToP6API.ProductionURL + RouteSufix;
 
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de seguridad del api, en este caso ApiKey
+                request.AddHeader(Services.CnnToP6API.ApiKeyName, Services.CnnToP6API.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                //TODO: guardar estos errores en una bitácora para su posterior análisis
+                throw;
+            }
+        }
     } 
 }

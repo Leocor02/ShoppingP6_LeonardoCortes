@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingP6_LeonardoCortes.Views.ActionMenuPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Label Text="Select an Action" VerticalOptions="StartAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Large"
+                       />
+
+                <FlexLayout Wrap="Wrap"
+                            JustifyContent="SpaceAround"
+                            Direction="Row"
+                            AlignContent="Start" Padding="0,35,0,20">
+                    
+                    <Button Text="Create invoice"
+                            HeightRequest="200"
+                            WidthRequest="150"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            />
+                </FlexLayout>
+            </Grid>
+        </ScrollView>
+       
+       
+    </ContentPage.Content>
+</ContentPage>
