@@ -76,8 +76,8 @@ namespace ShoppingP6_LeonardoCortes.ViewModels
                                            string pPassword,
                                            string pBkpEmail,
                                            string pPhoneNumber,
-                                           int pUserRole = 1,
-                                           int pCountry = 1)
+                                           int pUserRole,
+                                           int pCountry)
         {
             if (IsBusy) return false;
             IsBusy = true;

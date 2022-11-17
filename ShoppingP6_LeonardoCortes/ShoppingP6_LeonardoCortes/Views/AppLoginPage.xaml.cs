@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -45,10 +46,29 @@ namespace ShoppingP6_LeonardoCortes.Views
             if (TxtUserName.Text != null && !string.IsNullOrEmpty(TxtUserName.Text.Trim()) && 
                 TxtPassword.Text != null && !string.IsNullOrEmpty(TxtPassword.Text.Trim()))
             {
-                string u = TxtUserName.Text.Trim();
-                string p = TxtPassword.Text.Trim();
+                try
+                {
+                    UserDialogs.Instance.ShowLoading("Checking user data...");
+                    await Task.Delay(2000);
 
-                R = await vm.UserAccessValidation(u, p);
+                    string u = TxtUserName.Text.Trim();
+                    string p = TxtPassword.Text.Trim();
+
+                    R = await vm.UserAccessValidation(u, p);
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    UserDialogs.Instance.HideLaoding();
+                }
+
+
+
             }
             else
             {

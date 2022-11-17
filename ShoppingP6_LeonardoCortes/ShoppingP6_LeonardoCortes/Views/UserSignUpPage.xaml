@@ -7,18 +7,16 @@
             
         <!--TO DO: Agregar imagen de usuario default-->
             <Entry x:Name="TxtName" Placeholder="Name"/>
-            <Entry x:Name="TxtEmail" Placeholder="Email"/>
+            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
             <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
-            <Entry x:Name="TxtEmailBackUp" Placeholder="BackUp Email"/>
-            <Entry x:Name="TxtPhone" Placeholder="Phone Number"/>
+            <Entry x:Name="TxtEmailBackUp" Placeholder="BackUp Email" Keyboard="Email"/>
+            <Entry x:Name="TxtPhone" Placeholder="Phone Number" Keyboard="Telephone"/>
 
             <Picker x:Name="PckUserRole" Title="Select a User Role" ItemDisplayBinding="{Binding UserRoleDescription}"/>
             <Picker x:Name="PckCountry" Title="Select a Country" ItemDisplayBinding="{Binding CountryName}"/>
 
             <Button x:Name="BtnAdd" Text="ADD" Clicked="BtnAdd_Clicked"/>
             <Button x:Name="BtnCancel" Text="CANCEL" Clicked="BtnCancel_Clicked"/>
-
-
 
         </StackLayout>
     </ContentPage.Content>
