@@ -14,14 +14,40 @@ namespace ShoppingP6_LeonardoCortes.ViewModels
 
         public User MyUser { get; set; }
 
+        public UserDTO MiUsuarioDTO { get; set; }
+
         public UserViewModel()
         {
             MyUserRole = new UserRole();
             MyCounty = new Country();
             MyUser = new User();
+            MiUsuarioDTO = new UserDTO();
         }
 
-        
+        public async Task<UserDTO> GetUserData(string email)
+        {
+            try
+            {
+                UserDTO user = new UserDTO();
+
+                user = await MiUsuarioDTO.GetUserData(email);
+
+                if (user == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return user;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
         public async Task<List<UserRole>> GetUserRoleList()
         {
             try
@@ -44,6 +70,7 @@ namespace ShoppingP6_LeonardoCortes.ViewModels
                 return null;
             }
         }
+
 
 
         public async Task<List<Country>> GetCountryList()
@@ -133,9 +160,44 @@ namespace ShoppingP6_LeonardoCortes.ViewModels
             }
             finally 
             { IsBusy = false; }        
-            
+        }
 
-            
+        public async Task<bool> UpdateUser(string pName,
+                                           string pEmail,
+                                           string pPassword,
+                                           string pBkpEmail,
+                                           string pPhoneNumber,
+                                           int pUserRole,
+                                           int pCountry)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                MiUsuarioDTO.Nombre = pName;
+                MiUsuarioDTO.CorreoElectronico = pEmail;
+                MiUsuarioDTO.Contrasennia = pPassword;
+                MiUsuarioDTO.CorreoElectronico = pBkpEmail;
+                MiUsuarioDTO.NumeroTelefono = pPhoneNumber;
+                MiUsuarioDTO.IDRol = pUserRole;
+                MiUsuarioDTO.IDPais = pCountry;
+
+                bool R = await MiUsuarioDTO.UpdateUser();
+
+                return R;
+
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
 
         }
     }

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShoppingP6_LeonardoCortes.Views.UserManagementPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#019999" Padding="20,150,20,0" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="20,150,20,0" HorizontalOptions="FillAndExpand">
 
 
             <Entry x:Name="TxtName" Placeholder="Name">
