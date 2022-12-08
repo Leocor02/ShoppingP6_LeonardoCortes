@@ -21,5 +21,10 @@ namespace ShoppingP6_LeonardoCortes.Views
         {
             await Navigation.PushAsync(new UserManagementPage()); 
         }
+
+        private async void BtnItemManagemet_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InventoryListPage());
+        }
     }
 }
