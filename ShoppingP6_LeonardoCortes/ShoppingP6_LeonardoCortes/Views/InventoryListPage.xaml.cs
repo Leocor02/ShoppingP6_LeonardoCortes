@@ -27,7 +27,7 @@ namespace ShoppingP6_LeonardoCortes.Views
 
         private async void LoadItemList()
         {
-            LstInventory.ItemSource = await vm.GetFullInventoryList();
+            LstInventory.ItemsSource = await vm.GetFullInventoryList();
         }
     }
 }

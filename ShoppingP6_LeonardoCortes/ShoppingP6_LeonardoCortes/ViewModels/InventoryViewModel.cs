@@ -33,7 +33,7 @@ namespace ShoppingP6_LeonardoCortes.ViewModels
                     {
                         ObservableCollection<Inventory> list = new ObservableCollection<Inventory>();
 
-                        list = await MyInventory.GetFullInventoryList();
+                    list = await MyInventory.GetItemListFull();
 
                         if (list == null)
                         {

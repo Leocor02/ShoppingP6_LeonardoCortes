@@ -57,7 +57,7 @@ namespace ShoppingP6_LeonardoCortes.Views
             }
             else
             {
-                //en caso qie alguna validación falle se le indica al usaurio que hace falta
+                //en caso que alguna validación falle se le indica al usaurio que hace falta
                 if (TxtName.Text == null || string.IsNullOrEmpty(TxtName.Text.Trim()))
                 {
                     DisplayAlert("Validation error", "Name is required", "Ok");
@@ -119,9 +119,6 @@ namespace ShoppingP6_LeonardoCortes.Views
 
             if (UserInputValidation())
             {
-
-
-
                 //seleccionar el id de rol de usuario
                     UserRole UsrRole = PckUserRole.SelectedItem as UserRole;
                     int IdRol = UsrRole.IduserRole;
