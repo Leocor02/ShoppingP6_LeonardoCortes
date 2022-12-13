@@ -26,6 +26,7 @@ namespace ShoppingP6_LeonardoCortes.Views
             LoadCountryList();
 
             //llenar los campos con la data del usuario global
+            LoadUserData();
         }
 
         private void LoadUserData()
